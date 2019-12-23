@@ -526,10 +526,9 @@
     <stringProp name="HTTPSampler.response_timeout" />
     <stringProp name="TestPlan.comments" />
 <stringProp name="HTTPSampler.proxyPort" /></HTTPSamplerProxy>
-<hashTree /><LoopController element_type="LoopController" enabled="true" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
-    <boolProp name="LoopController.continue_forever">true</boolProp>
-    <stringProp name="LoopController.loops">-1</stringProp>
-</LoopController>
+<hashTree /><RandomController element_type="RandomController" enabled="true" guiclass="RandomControlGui" testclass="RandomController" testname="Random Controller">
+	<intProp name="InterleaveControl.style">0</intProp>
+</RandomController>
 <hashTree><HTTPSamplerProxy element_type="HttpRequest" enabled="true" guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request">
     <elementProp elementType="Arguments" enabled="true" guiclass="HTTPArgumentsPanel" name="HTTPsampler.Arguments" testclass="Arguments" testname="User Defined Variables">
         <collectionProp name="Arguments.arguments" />

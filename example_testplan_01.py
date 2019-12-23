@@ -3,6 +3,7 @@ from jmeter_api.timers.constant_throughput_timer.elements import ConstantThrough
 from jmeter_api.timers.constant_timer.elements import ConstantTimer
 from jmeter_api.non_test_elements.test_plan.elements import TestPlan
 from jmeter_api.controllers.loop_controller.elements import LoopController
+from jmeter_api.controllers.random_controller.elements import RandomController
 from jmeter_api.samplers.http_request.elements import HttpRequest
 from jmeter_api.thread_groups.common_thread_group.elements import CommonThreadGroup
 
@@ -23,7 +24,7 @@ if __name__ == "__main__":
 
     third_thread_group = CommonThreadGroup(continue_forever=True, name='ThirdThreadGroup')
     lc = LoopController(loops = 3, name = 'loop3')
-    lc2 = LoopController(continue_forever = True)
+    lc2 = RandomController(ignoreSubControllers = True)
     lc2.append(HttpRequest(host='www.google.com'))
     lc.append(HttpRequest(host='www.google.com'))
     lc.append(lc2)
